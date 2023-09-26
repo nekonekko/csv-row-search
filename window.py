@@ -38,7 +38,7 @@ def main():
         event, values = window.read()
         if event == sg.WIN_CLOSED:
             break
-        if event == "Submit":
+        if event == "確定":
             search_word = values["-SEARCH-WORD-"]
             folder_input = values["-FOLDER-INPUT-"]
             file_input = values["-FILE-INPUT-"]
