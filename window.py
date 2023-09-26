@@ -39,10 +39,16 @@ def main():
         if event == sg.WIN_CLOSED:
             break
         if event == "Submit":
+            search_word = values["-SEARCH-WORD-"]
+            folder_input = values["-FOLDER-INPUT-"]
+            file_input = values["-FILE-INPUT-"]
+            if len(search_word) == 0 or len(folder_input) == 0 or len(file_input) == 0:
+                sg.popup("Some fields are not filled!")
+                continue
             is_completed = search_row_in_csv(
-                values["-SEARCH-WORD-"],
-                values["-FOLDER-INPUT-"],
-                values["-FILE-INPUT-"],
+                search_word,
+                folder_input,
+                file_input,
             )
             if is_completed:
                 sg.popup("Search completed!")
